@@ -1,0 +1,56 @@
+Barbarian 1 is hungry and going to the pot.
+Barbarian 2 is hungry and going to the pot.
+Barbarian 2 has eaten a piece.
+Barbarian 5 is hungry and going to the pot.
+Barbarian 5 has eaten a piece.
+Barbarian 3 is hungry and going to the pot.
+Barbarian 3 has eaten a piece.
+Barbarian 4 is hungry and going to the pot.
+The pot is empty. Barbarian 4 wakes up the Cook.
+Barbarian 1 has eaten a piece.
+The Cook is awake and going to cook.
+The Cook has cooked 4 pieces.
+The Cook fell asleep.
+Barbarian 4 has eaten a piece.
+Barbarian 2 is hungry and going to the pot.
+Barbarian 2 has eaten a piece.
+Barbarian 3 is hungry and going to the pot.
+Barbarian 3 has eaten a piece.
+Barbarian 1 is hungry and going to the pot.
+Barbarian 1 has eaten a piece.
+Barbarian 5 is hungry and going to the pot.
+The pot is empty. Barbarian 5 wakes up the Cook.
+The Cook is awake and going to cook.
+The Cook has cooked 4 pieces.
+The Cook fell asleep.
+Barbarian 5 has eaten a piece.
+Barbarian 4 is hungry and going to the pot.
+Barbarian 4 has eaten a piece.
+Barbarian 1 is hungry and going to the pot.
+Barbarian 1 has eaten a piece.
+Barbarian 3 is hungry and going to the pot.
+Barbarian 3 has eaten a piece.
+Barbarian 2 is hungry and going to the pot.
+The pot is empty. Barbarian 2 wakes up the Cook.
+The Cook is awake and going to cook.
+The Cook has cooked 4 pieces.
+The Cook fell asleep.
+Barbarian 2 has eaten a piece.
+Barbarian 5 is hungry and going to the pot.
+Barbarian 5 has eaten a piece.
+Barbarian 4 is hungry and going to the pot.
+Barbarian 4 has eaten a piece.
+Barbarian 1 is hungry and going to the pot.
+Barbarian 1 has eaten a piece.
+Barbarian 3 is hungry and going to the pot.
+The pot is empty. Barbarian 3 wakes up the Cook.
+The Cook is awake and going to cook.
+The Cook has cooked 4 pieces.
+The Cook fell asleep.
+Barbarian 5 is hungry and going to the pot.
+Barbarian 5 has eaten a piece.
+Barbarian 3 has eaten a piece.
+Barbarian 2 is hungry and going to the pot.
+Barbarian 4 is hungry and going to the pot.
+Barbarian 4 has eaten a piece.
+Barbarian 2 has eaten a piece.
