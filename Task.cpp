@@ -38,10 +38,21 @@ void *Barbarian(void *args) {
     }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     int n; // Количество потоков-дикарей.
     int m; // Вместимость горшка (максимальная величина семафора).
-    std::cin >> n >> m;
+
+    // Проверка аргументов командной строки на корректность.
+    if (argc != 3) {
+        std::cout << "Wrong number of arguments. Termination.";
+        return 0;
+    }
+    n = atoi(argv[1]);
+    m = atoi(argv[2]);
+    if (n <= 0 || m <= 0) {
+        std::cout << "Wrong arguments. Termination.";
+        return 0;
+    }
 
     sem_init(&pot, 0, m); // Семафор-горшок, заполненный.
     sem_init(&cooking, 0, 0); // Семафор для управлением поваром-производителем. Изначально спит.
