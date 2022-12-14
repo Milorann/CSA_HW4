@@ -8,6 +8,7 @@
 sem_t pot; // Семафор-горшок.
 sem_t cooking; // Семафор для пробуждения производителя потребителями.
 pthread_mutex_t mutex; // Мьютекс для корректного пробуждения производителя потребителем.
+pthread_mutex_t wr; // Мьютекс для корректного вывода в консоль и файл.
 std::ifstream fin; // Поток для чтения из файла.
 std::ofstream fout; // Поток для вывода в файл.
 
@@ -18,26 +19,31 @@ void generator(int *n, int *m) {
     *m = 1 + (rand() % 25); // Вместимость горшка-семафора.
     std::cout << "Generated number of barbarians: " << *n << "\nGenerated pot capacity: " << *m << std::endl;
     fout << "Generated number of barbarians: " << *n << "\nGenerated pot capacity: " << *m << std::endl;
-    fout.flush();
 }
 
 void *Cook(void *args) {
     int *pot_size = ((int *) args); // Значение для пополнения семафора-горшка.
     while (true) { // Обед не должен закончиться!
         sem_wait(&cooking); // Производитель ожидает пробуждения из потока-потребителя.
+        pthread_mutex_lock(&wr);
         std::cout << "The Cook is awake and going to cook.\n";
         fout << "The Cook is awake and going to cook.\n";
         fout.flush();
+        pthread_mutex_unlock(&wr);
         for (int i = 0; i < *pot_size; ++i) {
             sem_post(&pot); // Производитель пополняет семафор-горшок.
         }
+        pthread_mutex_lock(&wr);
         std::cout << "The Cook has cooked " << *pot_size << " pieces.\n";
         fout << "The Cook has cooked " << *pot_size << " pieces.\n";
         fout.flush();
+        pthread_mutex_unlock(&wr);
         //sem_post_multiple(&pot, *pot_size); // Разумно пользоваться в Windows вместо цикла.
+        pthread_mutex_lock(&wr);
         std::cout << "The Cook fell asleep.\n";
         fout << "The Cook fell asleep.\n";
         fout.flush();
+        pthread_mutex_unlock(&wr);
     }
 }
 
@@ -45,9 +51,11 @@ void *Barbarian(void *args) {
     int *barbarian_number = ((int *) args); // Номер потока-дикаря.
     int pot_size;
     while (true) {
+        pthread_mutex_lock(&wr);
         std::cout << "Barbarian " << *barbarian_number << " is hungry and going to the pot.\n";
         fout << "Barbarian " << *barbarian_number << " is hungry and going to the pot.\n";
         fout.flush();
+        pthread_mutex_unlock(&wr);
         // Лок на часть кода с проверкой значения семафора и готовкой, иначе происходит дедлок из-за sem_wait.
         pthread_mutex_lock(&mutex);
         sem_getvalue(&pot, &pot_size); // Узнаем значение семафора-горшка.
@@ -59,9 +67,11 @@ void *Barbarian(void *args) {
         }
         sem_wait(&pot); // Потребитель взял ресурс-кусок из семафора-горшка.
         pthread_mutex_unlock(&mutex); // Теперь можно отпустить мьютекс.
+        pthread_mutex_lock(&wr);
         std::cout << "Barbarian " << *barbarian_number << " has eaten a piece.\n";
         fout << "Barbarian " << *barbarian_number << " has eaten a piece.\n";
         fout.flush();
+        pthread_mutex_unlock(&wr);
         sleep(2); // Поток "сытый" на две секунды.
     }
 }
