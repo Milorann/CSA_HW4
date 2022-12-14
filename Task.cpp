@@ -27,9 +27,12 @@ void *Cook(void *args) {
         sem_wait(&cooking); // Производитель ожидает пробуждения из потока-потребителя.
         std::cout << "The Cook is awake and going to cook.\n";
         fout << "The Cook is awake and going to cook.\n";
+        for (int i = 0; i < *pot_size; ++i) {
+            sem_post(&pot); // Производитель пополняет семафор-горшок.
+        }
         std::cout << "The Cook has cooked " << *pot_size << " pieces.\n";
         fout << "The Cook has cooked " << *pot_size << " pieces.\n";
-        sem_post_multiple(&pot, *pot_size); // Производитель пополняет семафор-горшок.
+        //sem_post_multiple(&pot, *pot_size); // Разумно пользоваться в Windows вместо цикла.
         std::cout << "The Cook fell asleep.\n";
         fout << "The Cook fell asleep.\n";
     }
@@ -124,3 +127,4 @@ int main(int argc, char *argv[]) {
     pthread_mutex_destroy(&mutex);
     return 0;
 }
+
