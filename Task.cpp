@@ -11,14 +11,6 @@ pthread_mutex_t mutex; // Мьютекс для корректного проб�
 std::ifstream fin; // Поток для чтения из файла.
 std::ofstream fout; // Поток для вывода в файл.
 
-void signal_handler(int signal_num) {
-    std::cout << "The interrupt signal is (" << signal_num
-              << "). \n";
-
-    // It terminates the  program
-    exit(signal_num);
-}
-
 void generator(int *n, int *m) {
     srand(time(nullptr));
     // Числа от 1 до 25 включительно.
@@ -26,6 +18,7 @@ void generator(int *n, int *m) {
     *m = 1 + (rand() % 25); // Вместимость горшка-семафора.
     std::cout << "Generated number of barbarians: " << *n << "\nGenerated pot capacity: " << *m << std::endl;
     fout << "Generated number of barbarians: " << *n << "\nGenerated pot capacity: " << *m << std::endl;
+    fout.flush();
 }
 
 void *Cook(void *args) {
@@ -111,6 +104,7 @@ int main(int argc, char *argv[]) {
     if (n <= 0 || m <= 0 || n > 25 || m > 25) {
         std::cout << "Wrong arguments. Termination.\n";
         fout << "Wrong arguments. Termination.\n";
+        fout.flush();
         return 0;
     }
 
