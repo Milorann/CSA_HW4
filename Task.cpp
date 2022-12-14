@@ -25,7 +25,7 @@ void *Cook(void *args) {
     int *pot_size = ((int *) args); // Значение для пополнения семафора-горшка.
     while (true) { // Обед не должен закончиться!
         sem_wait(&cooking); // Производитель ожидает пробуждения из потока-потребителя.
-        pthread_mutex_lock(&wr);
+        pthread_mutex_lock(&wr); // Лок, чтобы вывод в консоль и файл был одинаковым.
         std::cout << "The Cook is awake and going to cook.\n";
         fout << "The Cook is awake and going to cook.\n";
         fout.flush();
@@ -33,13 +33,13 @@ void *Cook(void *args) {
         for (int i = 0; i < *pot_size; ++i) {
             sem_post(&pot); // Производитель пополняет семафор-горшок.
         }
-        pthread_mutex_lock(&wr);
+        pthread_mutex_lock(&wr); // Лок, чтобы вывод в консоль и файл был одинаковым.
         std::cout << "The Cook has cooked " << *pot_size << " pieces.\n";
         fout << "The Cook has cooked " << *pot_size << " pieces.\n";
         fout.flush();
         pthread_mutex_unlock(&wr);
         //sem_post_multiple(&pot, *pot_size); // Разумно пользоваться в Windows вместо цикла.
-        pthread_mutex_lock(&wr);
+        pthread_mutex_lock(&wr); // Лок, чтобы вывод в консоль и файл был одинаковым.
         std::cout << "The Cook fell asleep.\n";
         fout << "The Cook fell asleep.\n";
         fout.flush();
@@ -51,7 +51,7 @@ void *Barbarian(void *args) {
     int *barbarian_number = ((int *) args); // Номер потока-дикаря.
     int pot_size;
     while (true) {
-        pthread_mutex_lock(&wr);
+        pthread_mutex_lock(&wr); // Лок, чтобы вывод в консоль и файл был одинаковым.
         std::cout << "Barbarian " << *barbarian_number << " is hungry and going to the pot.\n";
         fout << "Barbarian " << *barbarian_number << " is hungry and going to the pot.\n";
         fout.flush();
@@ -67,7 +67,7 @@ void *Barbarian(void *args) {
         }
         sem_wait(&pot); // Потребитель взял ресурс-кусок из семафора-горшка.
         pthread_mutex_unlock(&mutex); // Теперь можно отпустить мьютекс.
-        pthread_mutex_lock(&wr);
+        pthread_mutex_lock(&wr); // Лок, чтобы вывод в консоль и файл был одинаковым.
         std::cout << "Barbarian " << *barbarian_number << " has eaten a piece.\n";
         fout << "Barbarian " << *barbarian_number << " has eaten a piece.\n";
         fout.flush();
