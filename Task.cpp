@@ -5,11 +5,11 @@
 #include <unistd.h>
 #include <fstream>
 
-sem_t pot;
-sem_t cooking;
-pthread_mutex_t mutex;
-std::ifstream fin;
-std::ofstream fout;
+sem_t pot; // Семафор-горшок.
+sem_t cooking; // Семафор для пробуждения производителя потребителями.
+pthread_mutex_t mutex; // Мьютекс для корректного пробуждения производителя потребителем.
+std::ifstream fin; // Поток для чтения из файла.
+std::ofstream fout; // Поток для вывода в файл.
 
 
 void generator(int *n, int *m) {
