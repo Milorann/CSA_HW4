@@ -48,6 +48,7 @@ void *Cook(void *args) {
 }
 
 void *Barbarian(void *args) {
+    srand(time(nullptr));
     int *barbarian_number = ((int *) args); // Номер потока-дикаря.
     int pot_size;
     while (true) {
@@ -72,7 +73,7 @@ void *Barbarian(void *args) {
         fout << "Barbarian " << *barbarian_number << " has eaten a piece.\n";
         fout.flush();
         pthread_mutex_unlock(&wr);
-        sleep(2); // Поток "сытый" на две секунды.
+        sleep(1 + (rand() % 5)); // Поток "сытый" от 1 до 5 секунд.
     }
 }
 
@@ -143,4 +144,3 @@ int main(int argc, char *argv[]) {
     pthread_mutex_destroy(&mutex);
     return 0;
 }
-
