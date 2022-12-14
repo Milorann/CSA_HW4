@@ -1,64 +1,64 @@
+Generated number of barbarians: 9
+Generated pot capacity: 12
 Barbarian 1 is hungry and going to the pot.
+Barbarian 1 has eaten a piece.
+Barbarian 5 is hungry and going to the pot.
+Barbarian 4 is hungry and going to the pot.
+Barbarian 7 is hungry and going to the pot.
+Barbarian 6 is hungry and going to the pot.
+Barbarian 5 has eaten a piece.
+Barbarian 4 has eaten a piece.
+Barbarian 9 is hungry and going to the pot.
+Barbarian 8 is hungry and going to the pot.
+Barbarian 8 has eaten a piece.
+Barbarian 7 has eaten a piece.
+Barbarian 3 is hungry and going to the pot.
+Barbarian 6 has eaten a piece.
+Barbarian 3 has eaten a piece.
+Barbarian 9 has eaten a piece.
 Barbarian 2 is hungry and going to the pot.
 Barbarian 2 has eaten a piece.
-Barbarian 1 has eaten a piece.
-Barbarian 4 is hungry and going to the pot.
-Barbarian 3 is hungry and going to the pot.
-Barbarian 4 has eaten a piece.
-Barbarian 3 has eaten a piece.
 Barbarian 1 is hungry and going to the pot.
 Barbarian 1 has eaten a piece.
-Barbarian 3 is hungry and going to the pot.
-The pot is empty. Barbarian 3 wakes up the Cook.
 Barbarian 2 is hungry and going to the pot.
+Barbarian 2 has eaten a piece.
 Barbarian 4 is hungry and going to the pot.
+Barbarian 4 has eaten a piece.
+Barbarian 7 is hungry and going to the pot.
+The pot is empty. Barbarian 7 wakes up the Cook.
+Barbarian 5 is hungry and going to the pot.
+Barbarian 8 is hungry and going to the pot.
+Barbarian 6 is hungry and going to the pot.
 The Cook is awake and going to cook.
-The Cook has cooked 5 pieces.
-The Cook fell asleep.
-Barbarian 3 has eaten a piece.
-Barbarian 2 has eaten a piece.
-Barbarian 4 has eaten a piece.
-Barbarian 4 is hungry and going to the pot.
+The Cook has cooked 12 pieces.
+Barbarian 9 is hungry and going to the pot.
+Barbarian 9 has eaten a piece.
+Barbarian 6 has eaten a piece.
+Barbarian 7 has eaten a piece.
 Barbarian 3 is hungry and going to the pot.
-Barbarian 4 has eaten a piece.
 Barbarian 3 has eaten a piece.
-Barbarian 1 is hungry and going to the pot.
-The pot is empty. Barbarian 1 wakes up the Cook.
+Barbarian 8 has eaten a piece.
+The Cook fell asleep.
+Barbarian 5 has eaten a piece.
 Barbarian 2 is hungry and going to the pot.
+Barbarian 2 has eaten a piece.
+Barbarian 1 is hungry and going to the pot.
+Barbarian 1 has eaten a piece.
+Barbarian 4 is hungry and going to the pot.
+Barbarian 4 has eaten a piece.
+Barbarian 3 is hungry and going to the pot.
+Barbarian 3 has eaten a piece.
+Barbarian 6 is hungry and going to the pot.
+Barbarian 6 has eaten a piece.
+Barbarian 7 is hungry and going to the pot.
+Barbarian 7 has eaten a piece.
+Barbarian 9 is hungry and going to the pot.
+The pot is empty. Barbarian 9 wakes up the Cook.
 The Cook is awake and going to cook.
-The Cook has cooked 5 pieces.
+The Cook has cooked 12 pieces.
 The Cook fell asleep.
-Barbarian 1 has eaten a piece.
-Barbarian 2 has eaten a piece.
-Barbarian 2 is hungry and going to the pot.
-Barbarian 4 is hungry and going to the pot.
-Barbarian 4 has eaten a piece.
-Barbarian 2 has eaten a piece.
-Barbarian 3 is hungry and going to the pot.
-Barbarian 3 has eaten a piece.
-Barbarian 1 is hungry and going to the pot.
-The pot is empty. Barbarian 1 wakes up the Cook.
-The Cook is awake and going to cook.
-The Cook has cooked 5 pieces.
-The Cook fell asleep.
-Barbarian 1 has eaten a piece.
-Barbarian 2 is hungry and going to the pot.
-Barbarian 2 has eaten a piece.
-Barbarian 4 is hungry and going to the pot.
-Barbarian 4 has eaten a piece.
-Barbarian 3 is hungry and going to the pot.
-Barbarian 3 has eaten a piece.
-Barbarian 1 is hungry and going to the pot.
-Barbarian 1 has eaten a piece.
-Barbarian 4 is hungry and going to the pot.
-The pot is empty. Barbarian 4 wakes up the Cook.
-Barbarian 2 is hungry and going to the pot.
-The Cook is awake and going to cook.
-The Cook has cooked 5 pieces.
-The Cook fell asleep.
-Barbarian 4 has eaten a piece.
-Barbarian 2 has eaten a piece.
-Barbarian 3 is hungry and going to the pot.
-Barbarian 3 has eaten a piece.
-Barbarian 1 is hungry and going to the pot.
-Barbarian 1 has eaten a piece.
+Barbarian 9 has eaten a piece.
+Barbarian 8 is hungry and going to the pot.
+Barbarian 8 has eaten a piece.
+Barbarian 5 is hungry and going to the pot.
+Barbarian 5 has eaten a piece.
