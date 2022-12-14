@@ -12,6 +12,15 @@ std::ifstream fin;
 std::ofstream fout;
 
 
+void generator(int *n, int *m) {
+    srand(time(nullptr));
+    // Числа от 1 до 25 включительно.
+    *n = 1 + (rand() % 25); // Число дикарей-потоков.
+    *m = 1 + (rand() % 25); // Вместимость горшка-семафора.
+    std::cout << "Generated number of barbarians: " << *n << "\nGenerated pot capacity: " << *m << std::endl;
+    fout << "Generated number of barbarians: " << *n << "\nGenerated pot capacity: " << *m << std::endl;
+}
+
 void *Cook(void *args) {
     int *pot_size = ((int *) args); // Значение для пополнения семафора-горшка.
     while (true) { // Обед не должен закончиться!
@@ -53,9 +62,17 @@ int main(int argc, char *argv[]) {
     int m = 0; // Вместимость горшка (максимальная величина семафора).
 
     // Проверка аргументов командной строки на корректность.
-    if (argc != 3 && argc != 4) {
+    if (argc != 2 && argc != 3 && argc != 4) {
         std::cout << "Wrong number of arguments. Termination.\n";
         return 0;
+    }
+    if (argc == 2) {
+        fout.open(argv[1]);
+        if (!fout) {
+            std::cout << "The file does not exist. Termination.\n";
+            return 0;
+        }
+        generator(&n, &m);
     }
     if (argc == 3) {
         fin.open(argv[1]);
@@ -71,12 +88,12 @@ int main(int argc, char *argv[]) {
         n = atoi(argv[1]);
         m = atoi(argv[2]);
         fout.open(argv[3]);
-        if (!fin) {
+        if (!fout) {
             std::cout << "The file does not exist. Termination.\n";
             return 0;
         }
     }
-    if (n <= 0 || m <= 0) {
+    if (n <= 0 || m <= 0 || n > 25 || m > 25) {
         std::cout << "Wrong arguments. Termination.\n";
         fout << "Wrong arguments. Termination.\n";
         return 0;
